@@ -5,6 +5,8 @@ import { User } from '../models/users.model';
   providedIn: 'root',
 })
 export class UserService {
+  private isLoggedIn: boolean = false;
+
   private users: User[] = [
     {
       id: 1,
@@ -24,6 +26,14 @@ export class UserService {
     const userDetail = this.users.filter(
       (user) => user.username === username && user.password === password
     );
-    return userDetail.length > 0;
+    if(userDetail.length > 0){
+      this.isLoggedIn = true;
+      return true;
+    }
+    return false;
+  }
+
+  isUserLoggedIn(): boolean {
+    return this.isLoggedIn;
   }
 }

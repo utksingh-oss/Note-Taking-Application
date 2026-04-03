@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { authChildGuard } from './guard/auth-guard';
 
 export const routes: Routes = [
     {
@@ -12,6 +13,7 @@ export const routes: Routes = [
     },
     {
         path: 'notes',
-        loadChildren: () => import('./features/notes/notes.routes').then(m => m.NOTES_ROUTES)
+        loadChildren: () => import('./features/notes/notes.routes').then(m => m.NOTES_ROUTES),
+        canActivateChild: [authChildGuard]
     }
 ];
