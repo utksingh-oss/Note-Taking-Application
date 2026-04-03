@@ -1,0 +1,66 @@
+<div class="notes-table-container">
+
+    <h2>My Notes</h2>
+
+    <table class="notes-table">
+
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Created</th>
+                <th>Updated</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            @for (note of notesList; track note.id) {
+
+            <tr>
+
+                <td>{{ note.id }}</td>
+
+                <td>
+                    {{ note.title }}
+                </td>
+
+                <td>
+                    {{ note.createdAt | date:'medium' }}
+                </td>
+
+                <td>
+                    {{ note.updatedAt | date:'medium' }}
+                </td>
+
+                <td>
+
+                    <button class="button button-primary" (click)="editNote(note)">
+                        Edit
+                    </button>
+
+                    <button (click)="deleteNote(note.id)">
+                        Delete
+                    </button>
+                </td>
+
+            </tr>
+
+            }
+
+            @if (notesList.length === 0) {
+
+            <tr>
+                <td colspan="6">
+                    No notes available.
+                </td>
+            </tr>
+
+            }
+
+        </tbody>
+
+    </table>
+
+</div>
