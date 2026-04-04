@@ -5,8 +5,6 @@ import { User } from '../models/users.model';
   providedIn: 'root',
 })
 export class UserService {
-  private isLoggedIn: boolean = false;
-
   private users: User[] = [
     {
       id: 1,
@@ -21,19 +19,24 @@ export class UserService {
       password: 'password123',
     }
   ];
+
   
   isValidUser(username: string, password: string): boolean {
     const userDetail = this.users.filter(
       (user) => user.username === username && user.password === password
     );
     if(userDetail.length > 0){
-      this.isLoggedIn = true;
+      localStorage.setItem('isLoggedIn', 'true');
       return true;
     }
     return false;
   }
 
   isUserLoggedIn(): boolean {
-    return this.isLoggedIn;
+    return localStorage.getItem('isLoggedIn') === 'true';
+  }
+
+  logout() {
+     localStorage.removeItem('isLoggedIn');
   }
 }
