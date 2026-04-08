@@ -1,12 +1,14 @@
-import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
-import { LoginForm } from '../../components/login-form/login-form';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-login-page',
-  standalone: true,
-  imports: [CommonModule, LoginForm],
-  templateUrl: './login-page.html',
-  styleUrl: './login-page.css',
+  templateUrl: './login-page.component.html',
+  styleUrls: ['./login-page.component.scss'],
 })
-export class LoginPage {}
+export class LoginPageComponent  implements OnInit {
+
+  constructor() { }
+
+  ngOnInit() {}
+
+}
