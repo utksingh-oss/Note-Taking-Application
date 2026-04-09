@@ -1,3 +1,52 @@
-<p>
-  login-form works!
-</p>
+<ion-card class="ion-display-flex ion-flex-column" style="height: 40vh; min-height: 300px;">
+
+  <ion-card-header>
+    <ion-card-title class="ion-text-center">
+      <h1>Welcome</h1>
+    </ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content class="ion-flex-grow-1 ion-display-flex ion-flex-column">
+
+    <form (ngSubmit)="login()" class="ion-display-flex
+             ion-flex-column
+             ion-flex-grow-1
+             ion-align-content-around
+             ion-justify-content-around">
+
+      <!-- Inputs -->
+      <div>
+
+        <ion-item>
+          <ion-input label="Username" label-placement="floating" type="text" required name="username"
+            [(ngModel)]="username">
+          </ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-input label="Password" label-placement="floating" type="password" required name="password"
+            [(ngModel)]="password">
+          </ion-input>
+        </ion-item>
+
+      </div>
+
+
+      @if (loginError) {
+      <div class="error-alert ion-margin-top">
+        Invalid username or password. Please try again.
+      </div>
+      }
+
+
+      <!-- Button pinned to bottom -->
+      <ion-button expand="block" type="submit" class="ion-margin-top-auto">
+
+        Login
+
+      </ion-button>
+    </form>
+
+  </ion-card-content>
+
+</ion-card>

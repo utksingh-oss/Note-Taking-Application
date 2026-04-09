@@ -1,0 +1,15 @@
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>{{ title }}</ion-card-title>
+    <ion-card-subtitle>{{ author }}</ion-card-subtitle>
+  </ion-card-header>
+
+  <ion-card-content>
+    {{ getTruncatedContent() }}
+  </ion-card-content>
+
+  <div class="ion-text-right">
+    <ion-button fill="outline"><ion-icon name="create-outline" slot="start"></ion-icon>Edit</ion-button>
+    <ion-button fill="outline" color="danger"><ion-icon name="trash-outline" slot="start"></ion-icon>Delete</ion-button>
+  </div>
+</ion-card>

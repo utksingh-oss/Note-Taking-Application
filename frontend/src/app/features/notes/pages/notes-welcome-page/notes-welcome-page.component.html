@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title class="ion-text-center">
+      Notes
+    </ion-title>
+  </ion-toolbar>
+
+  <ion-toolbar>
+    <ion-searchbar></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+
+  <ion-grid>
+    <ion-row class="ion-justify-content-center">
+
+      <ion-col
+        size="12"
+        size-md="10"
+        size-lg="8"
+        size-xl="6">
+
+        <app-notes-display></app-notes-display>
+
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+
+  <!-- FAB goes here -->
+  <ion-fab
+    vertical="bottom"
+    horizontal="end"
+    slot="fixed">
+
+    <ion-fab-button
+      color="success"
+      (click)="createNote()">
+
+      <ion-icon name="add"></ion-icon>
+
+    </ion-fab-button>
+
+  </ion-fab>
+
+</ion-content>

@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { GuardComponent } from './guard.component';
+import { NotesWelcomePageComponent } from './notes-welcome-page.component';
 
-describe('GuardComponent', () => {
-  let component: GuardComponent;
-  let fixture: ComponentFixture<GuardComponent>;
+describe('NotesWelcomePageComponent', () => {
+  let component: NotesWelcomePageComponent;
+  let fixture: ComponentFixture<NotesWelcomePageComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ GuardComponent ],
+      declarations: [ NotesWelcomePageComponent ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(GuardComponent);
+    fixture = TestBed.createComponent(NotesWelcomePageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

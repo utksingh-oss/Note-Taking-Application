@@ -1,0 +1,12 @@
+<ion-list [inset]="true">
+  @if(notes.length === 0){
+  <ion-item>
+    <ion-label class="ion-text-center">
+      No notes found. Create a new note to get started!
+    </ion-label>
+  </ion-item>
+  }
+  @for (note of notes; track note.id) {
+    <app-note-item [title]="note.title" [author]="getUserNameById(note.userId)" [content]="note.content"></app-note-item>
+  }
+</ion-list>
